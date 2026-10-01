@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lucky Spin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="wrap nav-inner">
+      <a href="#home" class="logo">🎲 LUCKY SPIN</a>
+      <button id="burger" aria-label="Menu">☰</button>
+      <div id="menu" class="menu">
+        <a href="#home">Home</a>
+        <a href="#prizes">Prizes</a>
+        <a href="#participants">Participants</a>
+        <a href="#winners">Winners</a>
+        <button class="btn btn-sm" id="navDraw">Draw Now</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <h1>READY TO TEST <span>YOUR LUCK?</span></h1>
+        <p>One spin. One winner. One amazing prize.</p>
+        <div class="btns">
+          <a href="#raffle" class="btn">🎟️ Enter Raffle</a>
+          <a href="#prizes" class="btn btn-outline">🏆 View Prizes</a>
+        </div>
+      </div>
+      <div class="wheel-box">
+        <div class="pointer"></div>
+        <div class="wheel"><span>🍀</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- RAFFLE CARD -->
+  <section id="raffle" class="wrap">
+    <div class="raffle-card">
+      <h2 id="rTitle"></h2>
+      <p class="prize" id="rPrize"></p>
+      <div class="info">
+        <div><b id="rTickets"></b><span>Tickets Available</span></div>
+        <div><b id="rEntry"></b><span>Entry</span></div>
+        <div><b id="rTime"></b><span>Draw Time</span></div>
+      </div>
+      <button class="btn btn-big" id="startBtn">START DRAW 🎲</button>
+    </div>
+  </section>
+
+  <!-- PARTICIPANTS -->
+  <section id="participants" class="wrap">
+    <h2 class="title">Participants</h2>
+    <div class="people" id="people"></div>
+  </section>
+
+  <!-- WINNERS -->
+  <section id="winners" class="wrap">
+    <h2 class="title">Winner</h2>
+    <div class="winner-card" id="winnerCard">
+      <div class="trophy">🏆</div>
+      <h3>CONGRATULATIONS!</h3>
+      <p class="wname" id="wName"></p>
+      <p>Ticket: <b id="wTicket"></b></p>
+      <p class="wprize" id="wPrize"></p>
+    </div>
+    <p class="empty" id="noWinner">No winner yet. Click START DRAW to pick one! 🎲</p>
+  </section>
+
+  <!-- PRIZES -->
+  <section id="prizes" class="wrap">
+    <h2 class="title">Prizes</h2>
+    <div class="prizes" id="prizeList"></div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-bar">
+    <div class="wrap stats" id="stats"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">🎲 LUCKY SPIN</div>
+    <p>Good luck! May the luckiest person win. 🍀</p>
+    <small>© 2026 Lucky Spin</small>
+  </footer>
+
+  <!-- DRAW POPUP -->
+  <div id="modal">
+    <h2 id="mTitle">GET READY…</h2>
+    <div class="cycle" id="mName">?</div>
+    <div class="result" id="mResult">
+      <h2>🎉 WINNER! 🎉</h2>
+      <p class="big" id="rName"></p>
+      <p>Ticket: <b id="rTicket"></b></p>
+      <p>Prize: <b id="rWon"></b></p>
+      <div class="btns">
+        <button class="btn" id="againBtn">DRAW AGAIN</button>
+        <button class="btn btn-outline" id="closeBtn">Close</button>
+      </div>
+    </div>
+  </div>
+  <canvas id="confetti"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>

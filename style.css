@@ -1,0 +1,112 @@
+/* ===== COLORS (change them here) ===== */
+:root {
+  --burgundy: #6D1F3A;
+  --gold: #D4AF37;
+  --cream: #FFF8ED;
+  --white: #FFFFFF;
+  --dark: #171717;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body { background: var(--cream); color: var(--dark); font-family: "Segoe UI", system-ui, sans-serif; line-height: 1.5; }
+.wrap { max-width: 1050px; margin: auto; padding: 0 20px; }
+section.wrap { padding-top: 60px; padding-bottom: 20px; }
+.title { text-align: center; font-size: 2rem; color: var(--burgundy); margin-bottom: 26px; }
+
+/* ===== BUTTONS ===== */
+.btn { display: inline-block; background: var(--gold); color: var(--dark); border: 2px solid var(--gold); padding: 12px 26px; border-radius: 50px; font-size: 1rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: 0.25s; box-shadow: 0 0 18px rgba(212, 175, 55, 0.45); }
+.btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 0 32px rgba(212, 175, 55, 0.8); }
+.btn-outline { background: transparent; color: var(--gold); box-shadow: none; }
+.btn-sm { padding: 8px 18px; font-size: 0.9rem; }
+.btn-big { font-size: 1.4rem; padding: 16px 40px; animation: pulse 2s infinite; }
+.btns { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px; }
+@keyframes pulse { 50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.9); } }
+
+/* ===== NAVIGATION ===== */
+nav { position: sticky; top: 0; z-index: 50; background: rgba(109, 31, 58, 0.95); backdrop-filter: blur(10px); }
+.nav-inner { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+.logo { color: var(--gold); font-weight: 800; font-size: 1.3rem; letter-spacing: 2px; text-decoration: none; }
+.menu { display: flex; align-items: center; gap: 22px; }
+.menu a { color: var(--cream); text-decoration: none; font-weight: 500; transition: 0.2s; }
+.menu a:hover { color: var(--gold); }
+#burger { display: none; background: none; border: none; color: var(--gold); font-size: 2rem; cursor: pointer; }
+
+/* ===== HERO ===== */
+.hero { background: radial-gradient(circle at 70% 30%, #92304f, var(--burgundy) 60%, #3a0f20); color: var(--cream); padding: 70px 0; overflow: hidden; }
+.hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.hero h1 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.1; }
+.hero h1 span { color: var(--gold); text-shadow: 0 0 25px var(--gold); }
+.hero p { font-size: 1.2rem; margin-top: 14px; opacity: 0.9; }
+.wheel-box { position: relative; flex-shrink: 0; }
+.wheel { width: 280px; height: 280px; border-radius: 50%; border: 8px solid var(--gold); display: grid; place-items: center; font-size: 4rem; box-shadow: 0 0 50px rgba(212, 175, 55, 0.6); animation: spin 12s linear infinite;
+  background: conic-gradient(var(--gold) 0 45deg, var(--burgundy) 0 90deg, var(--cream) 0 135deg, var(--dark) 0 180deg, var(--gold) 0 225deg, var(--burgundy) 0 270deg, var(--cream) 0 315deg, var(--dark) 0 360deg); }
+.wheel span { background: var(--cream); width: 90px; height: 90px; border-radius: 50%; display: grid; place-items: center; border: 5px solid var(--gold); }
+.pointer { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); z-index: 2; border: 14px solid transparent; border-top: 30px solid var(--gold); filter: drop-shadow(0 0 6px var(--gold)); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ===== RAFFLE CARD ===== */
+.raffle-card { background: var(--white); border-radius: 28px; padding: 40px 24px; text-align: center; box-shadow: 0 20px 60px rgba(109, 31, 58, 0.25); border: 2px solid var(--gold); margin-top: -40px; position: relative; }
+.raffle-card h2 { color: var(--burgundy); font-size: 1.6rem; }
+.prize { font-size: clamp(2rem, 7vw, 3.4rem); font-weight: 800; color: var(--gold); text-shadow: 0 2px 12px rgba(212, 175, 55, 0.5); margin: 10px 0 24px; }
+.info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 28px; }
+.info div { background: var(--cream); border-radius: 16px; padding: 14px 24px; min-width: 140px; }
+.info b { display: block; font-size: 1.5rem; color: var(--burgundy); }
+.info span { font-size: 0.85rem; color: #666; }
+
+/* ===== PARTICIPANTS ===== */
+.people { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 16px; }
+.person { background: var(--white); border-radius: 18px; padding: 18px; text-align: center; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); transition: 0.25s; }
+.person:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(212, 175, 55, 0.4); }
+.person .avatar { width: 52px; height: 52px; margin: 0 auto 8px; border-radius: 50%; background: var(--burgundy); color: var(--gold); display: grid; place-items: center; font-size: 1.4rem; font-weight: 700; }
+.person b { display: block; font-size: 1.1rem; }
+.person span { color: var(--burgundy); font-size: 0.9rem; font-weight: 600; }
+
+/* ===== WINNER CARD ===== */
+.winner-card { display: none; max-width: 420px; margin: auto; text-align: center; background: linear-gradient(135deg, var(--burgundy), #3a0f20); color: var(--cream); padding: 36px 24px; border-radius: 26px; border: 3px solid var(--gold); animation: glow 2s ease-in-out infinite; }
+.winner-card.show { display: block; }
+.trophy { font-size: 4rem; }
+.winner-card h3 { color: var(--gold); letter-spacing: 3px; margin: 6px 0; }
+.wname { font-size: 2.4rem; font-weight: 800; }
+.wprize { color: var(--gold); font-size: 1.4rem; font-weight: 700; margin-top: 8px; }
+.empty { text-align: center; color: #777; }
+@keyframes glow { 50% { box-shadow: 0 0 45px 8px rgba(212, 175, 55, 0.7); } 0%, 100% { box-shadow: 0 0 15px 2px rgba(212, 175, 55, 0.3); } }
+
+/* ===== PRIZES ===== */
+.prizes { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+.prize-card { background: var(--white); border-radius: 24px; padding: 34px 20px; text-align: center; box-shadow: 0 10px 30px rgba(109, 31, 58, 0.15); border-top: 6px solid var(--gold); transition: 0.3s; }
+.prize-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(212, 175, 55, 0.5); }
+.prize-card .icon { font-size: 3.6rem; }
+.prize-card h3 { color: var(--burgundy); margin: 8px 0; }
+.prize-card p { font-size: 1.6rem; font-weight: 800; }
+
+/* ===== STATS ===== */
+.stats-bar { background: var(--burgundy); margin-top: 60px; padding: 46px 0; color: var(--cream); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center; }
+.stats b { display: block; font-size: 2.8rem; color: var(--gold); text-shadow: 0 0 18px rgba(212, 175, 55, 0.6); }
+
+/* ===== FOOTER ===== */
+footer { background: var(--dark); color: #bbb; text-align: center; padding: 34px 20px; }
+footer .logo { display: block; margin-bottom: 8px; }
+
+/* ===== DRAW POPUP ===== */
+#modal { position: fixed; inset: 0; z-index: 100; display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; color: var(--cream); background: radial-gradient(circle, #92304f, #2a0a18); }
+#mTitle { font-size: clamp(1.6rem, 6vw, 3rem); color: var(--gold); letter-spacing: 3px; animation: pulse2 1s infinite; }
+.cycle { font-size: clamp(3rem, 14vw, 8rem); font-weight: 800; margin-top: 20px; text-shadow: 0 0 35px var(--gold); }
+.result { display: none; }
+.result h2 { font-size: clamp(1.8rem, 7vw, 3rem); color: var(--gold); }
+.result .big { font-size: clamp(3rem, 14vw, 7rem); font-weight: 800; text-shadow: 0 0 40px var(--gold); }
+.result p { font-size: 1.3rem; margin: 4px 0; }
+.result .btns { justify-content: center; }
+#confetti { position: fixed; inset: 0; z-index: 200; pointer-events: none; width: 100%; height: 100%; }
+@keyframes pulse2 { 50% { opacity: 0.5; } }
+
+/* ===== MOBILE ===== */
+@media (max-width: 800px) {
+  #burger { display: block; }
+  .menu { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; background: var(--burgundy); padding: 20px; gap: 16px; }
+  .menu.open { display: flex; }
+  .hero-inner { flex-direction: column-reverse; text-align: center; }
+  .btns { justify-content: center; }
+  .wheel { width: 220px; height: 220px; }
+}
